@@ -1,16 +1,17 @@
-exports.up =  async function (knex) {
-  knew.schema.createTable('cars', table => {
-    table.increment()
-    table.string('vin', 128).notNullable().unique()
+exports.up = function(knex){
+  return knex.schema.createTable('cars', table => {
+    table.increments()
+    table.string('vin', 17).notNullable().unique()
     table.string('make', 128).notNullable()
+    table.string('model', 128).notNullable()
     table.integer('mileage').notNullable()
-    table.string('title')
-    table.string('transmission')
+    table.string('title', 128)
+    table.string('transmission', 128)
   })
 }
 
-exports.down = async function (knex) {
-  await knex.schema.dropTableIfExists('cars')
+exports.down = function (knex) {
+  return knex.schema.dropTableIfExists('cars')
 };
 
 

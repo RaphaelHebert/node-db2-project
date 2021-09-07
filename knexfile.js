@@ -18,7 +18,7 @@ const sharedConfig = {
 module.exports = {
   development: {
     ...sharedConfig,
-    connection: { filename: './data/dealer.db3' },
+    connection: { filename: './data/dealers.db3' },
   },
   testing: {
     ...sharedConfig,
